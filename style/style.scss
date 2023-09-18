@@ -1,4 +1,3 @@
-// @use "./style.css";
 $primary: #4294E3;
 $secondary: #8F12FD;
 $light: #F0F6FF;
@@ -493,7 +492,7 @@ grid-template-rows: repeat(4, 1fr) !important;
 
     }
     .landing-item h1 .text-change {
-    font-size: 2.3rem;
+    font-size: 3rem;
 }
 footer .footer-container ul {
   
@@ -596,4 +595,3 @@ opacity: 1;
 
 
 @import url("./style.css");
-// @import url("./_about.scss");
