@@ -36,15 +36,16 @@ const wordschanging = [ `own Fitness`, `own healthy`, `own beauty` ];
 let wordindex = 0;
 let charindex = 0;
 let isdelat = false;
-function changetext() {
+function changetext ()
+{
     let currntword = wordschanging[ wordindex ];
     let currntchar = currntword.substring(0, charindex);
-    changedtext.textContent=currntchar
+    changedtext.textContent = currntchar;
     if (!isdelat && charindex < currntword.length)
     {
         charindex++;
         setTimeout(changetext, 200);
-    } else if (isdelat && charindex >0)
+    } else if (isdelat && charindex > 0)
     {
         charindex--;
         setTimeout(changetext, 100);
@@ -55,7 +56,7 @@ function changetext() {
         setTimeout(changetext, 1000);
     }
 }
-changetext()
+changetext();
 
 /* change img */
 let landingimg = document.querySelectorAll(`.bg-fram`);
@@ -81,12 +82,8 @@ const sitem = document.querySelectorAll(`.s-item`);
 const aboutitem = document.querySelectorAll(`.about-container .s-item`);
 const contact = document.querySelector(`.contact`);
 const contactinputs = document.querySelectorAll(`.contact-input`);
-
-
-
-
-
-
+const sections = document.querySelectorAll(`.section`);
+let cuurentsection = `home`;
 window.addEventListener(`scroll`, () =>
 {
     if (window.scrollY >= (aboutcontainer.offsetTop - 25))
@@ -110,25 +107,27 @@ window.addEventListener(`scroll`, () =>
         }
     }
     window.scrollY >= 200 ? document.querySelector(`.nav-bar`).classList.add(`frxed-nav`) : document.querySelector(`.nav-bar`).classList.remove(`frxed-nav`);
-    /*   sections.forEach(sec =>
-      {
-          let top = window.scrollY;
-          let offset = sec.offsetTop;
-          let hight = sec.offsetHeight;
-          let id = sec.getAttribute(`id`);
-          if (top >= offset && top < offset + hight)
-          {
-              navli.forEach(a =>
-              {
-  
-                  a.classList.remove(`active`);
-                  
-                 });
-                  sec.id.classList.add(`active`);
-  
-  
-          }
-      });  */
+    // start
+    sections.forEach(sec =>
+    {
+        let stop = window.scrollY;
+        let offset = sec.offsetTop;
+        let id = sec.getAttribute(`id`);
+        if (stop >=( offset - 150 ))
+        {
+            cuurentsection = id;
+        }
+    });
+    navli.forEach(li =>
+    {
+        if (li.href.includes(cuurentsection))
+        {
+            document.querySelector(`.active`).classList.remove(`active`);
+            li.classList.add(`active`);
+
+        }
+    });
+    // end
 
     if (window.scrollY >= (fcontainer.offsetTop - 100))
     {
@@ -153,12 +152,13 @@ window.addEventListener(`scroll`, () =>
             item.classList.add(`show-box`);
         });
     }
-    if (window.scrollY >= (contact.offsetTop - 200)) {
+    if (window.scrollY >= (contact.offsetTop - 200))
+    {
         contactinputs.forEach(input =>
         {
             input.classList.add(`show-box`);
-    })
-   }
+        });
+    }
 
 });
 
