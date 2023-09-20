@@ -513,6 +513,9 @@ footer .footer-container ul {
     @include bg-text($r-linear-bg);
     font-weight:bolder
 }
+input{
+        outline: none;
+}
 
 .toggle-ul {
     position: absolute;
@@ -593,5 +596,5 @@ opacity: 1;
   
   
 
-
+// end
 @import url("./style.css");
