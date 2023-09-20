@@ -467,6 +467,10 @@ footer .footer-container ul input {
   font-weight: bolder;
 }
 
+input {
+  outline: none;
+}
+
 .toggle-ul {
   position: absolute;
   top: 5.5rem;
@@ -573,7 +577,7 @@ footer .footer-container ul input {
   transform: translate(0%, 0%) !important;
   transition: 2500ms ease;
 }
-
+/* end */
 .show-box:nth-child(6) {
   transform: translate(0%, 0%) !important;
   transition: 3000ms ease;
