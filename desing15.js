@@ -30,6 +30,12 @@ navlinks.forEach(link =>
         close_nave();
     });
 });
+document.addEventListener(`click`, (e) =>
+{
+    if (!bar.contains(e.target) && !xmark.contains(e.target) && !navul.contains(e.target)) {
+        close_nave();
+    }
+})
 /* change landing text */
 let changedtext = document.querySelector(`.text-change`);
 const wordschanging = [ `own Fitness`, `own healthy`, `own beauty` ];
